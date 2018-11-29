@@ -133,7 +133,6 @@ class Parser:
         if string is not None:
             source = InputSource(None)
             string = string.decode()
-            print(string)
             source.setByteStream(StringIO(string))
             sax.parse(source)
             timer.stop()
