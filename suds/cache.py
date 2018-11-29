@@ -26,7 +26,7 @@ from suds.sax.parser import Parser
 from suds.sax.element import Element
 from datetime import datetime as dt
 from datetime import timedelta
-from cStringIO import StringIO
+from io import StringIO
 from logging import getLogger
 try:
     import cPickle as pickle
