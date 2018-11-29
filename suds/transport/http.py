@@ -23,7 +23,7 @@ import base64
 import socket
 from suds.transport import *
 from suds.properties import Unskin
-from urlparse import urlparse
+import urllib.parse as urlparse
 from cookielib import CookieJar
 from logging import getLogger
 
