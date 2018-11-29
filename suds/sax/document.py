@@ -54,7 +54,7 @@ class Document:
             the document root element.
         @type node: (L{Element}|str|None)
         """
-        if isinstance(node, basestring):
+        if isinstance(node, str):
             self.__root = Element(node)
             return
         if isinstance(node, Element):
@@ -65,7 +65,7 @@ class Document:
         """
         Get a child by (optional) name and/or (optional) namespace.
         @param name: The name of a child element (may contain prefix).
-        @type name: basestring
+        @type name: str
         @param ns: An optional namespace used to match the child.
         @type ns: (I{prefix}, I{name})
         @param default: Returned when child not-found.
@@ -91,7 +91,7 @@ class Document:
         Get a child at I{path} where I{path} is a (/) separated
         list of element names that are expected to be children.
         @param path: A (/) separated list of element names.
-        @type path: basestring
+        @type path: str
         @return: The leaf node at the end of I{path}
         @rtype: L{Element}
         """
@@ -112,7 +112,7 @@ class Document:
         Get a list of children at I{path} where I{path} is a (/) separated
         list of element names that are expected to be children.
         @param path: A (/) separated list of element names.
-        @type path: basestring
+        @type path: str
         @return: The collection leaf nodes at the end of I{path}
         @rtype: [L{Element},...]
         """
@@ -132,7 +132,7 @@ class Document:
         """
         Get a list of children by (optional) name and/or (optional) namespace.
         @param name: The name of a child element (may contain prefix).
-        @type name: basestring
+        @type name: str
         @param ns: An optional namespace used to match the child.
         @type ns: (I{prefix}, I{name})
         @return: The list of matching children.
@@ -151,7 +151,7 @@ class Document:
         """
         Get a string representation of this XML document.
         @return: A I{pretty} string.
-        @rtype: basestring
+        @rtype: str
         """
         s = []
         s.append(self.DECL)
@@ -165,7 +165,7 @@ class Document:
         """
         Get a string representation of this XML document.
         @return: A I{plain} string.
-        @rtype: basestring
+        @rtype: str
         """
         s = []
         s.append(self.DECL)

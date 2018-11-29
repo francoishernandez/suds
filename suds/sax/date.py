@@ -49,7 +49,7 @@ class Date:
         if isinstance(date, dt.date):
             self.date = date
             return
-        if isinstance(date, basestring):
+        if isinstance(date, str):
             self.date = self.__parse(date)
             return
         raise ValueError(type(date))
@@ -138,7 +138,7 @@ class Time:
         if isinstance(time, dt.time):
             self.time = time
             return
-        if isinstance(time, basestring):
+        if isinstance(time, str):
             self.time = self.__parse(time)
             if adjusted:
                 self.__adjust()
@@ -288,7 +288,7 @@ class DateTime(Date,Time):
             self.datetime = \
                 dt.datetime.combine(self.date, self.time)
             return
-        if isinstance(date, basestring):
+        if isinstance(date, str):
             part = date.split('T')
             Date.__init__(self, part[0])
             Time.__init__(self, part[1], 0)
@@ -358,7 +358,7 @@ class Timezone:
         """
         Split the TZ from string.
         @param s: A string containing a timezone
-        @type s: basestring
+        @type s: str
         @return: The split parts.
         @rtype: tuple
         """

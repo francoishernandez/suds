@@ -42,11 +42,11 @@ def splitPrefix(name):
     Split the name into a tuple (I{prefix}, I{name}).  The first element in
     the tuple is I{None} when the name does't have a prefix.
     @param name: A node name containing an optional prefix.
-    @type name: basestring
+    @type name: str
     @return: A tuple containing the (2) parts of I{name}
     @rtype: (I{prefix}, I{name}) 
     """
-    if isinstance(name, basestring) \
+    if isinstance(name, str) \
         and ':' in name:
             return tuple(name.split(':', 1))
     else:

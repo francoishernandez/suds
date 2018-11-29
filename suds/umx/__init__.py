@@ -30,7 +30,7 @@ class Content(Object):
     @ivar data: The (optional) content data.
     @type data: L{Object}
     @ivar text: The (optional) content (xml) text.
-    @type text: basestring
+    @type text: str
     """
     
     extensions = []

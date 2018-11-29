@@ -276,7 +276,7 @@ class Printer:
                 return '<empty>'
             else:
                 return self.print_collection(object, h, n+2)
-        if isinstance(object, basestring):
+        if isinstance(object, str):
             return '"%s"' % tostr(object)
         return '%s' % tostr(object)
     

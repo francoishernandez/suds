@@ -198,7 +198,7 @@ class Schema:
         @param root: The xml root.
         @type root: L{sax.element.Element}
         @param baseurl: The base url used for importing.
-        @type baseurl: basestring
+        @type baseurl: str
         @param options: An options dictionary.
         @type options: L{options.Options}
         @param container: An optional container.
