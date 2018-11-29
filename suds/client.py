@@ -19,7 +19,7 @@ The I{2nd generation} service proxy provides access to web services.
 See I{README.txt}
 """
 
-import suds
+# import suds
 import suds.metrics as metrics
 from http.cookiejar import CookieJar
 from suds import *
@@ -27,9 +27,9 @@ from suds.reader import DefinitionsReader
 from suds.transport import TransportError, Request
 from suds.transport.https import HttpAuthenticated
 from suds.servicedefinition import ServiceDefinition
-from suds import sudsobject
-from sudsobject import Factory as InstFactory
-from sudsobject import Object
+# from suds import sudsobject
+from suds.sudsobject import Factory as InstFactory
+from suds.sudsobject import Object
 from suds.resolver import PathResolver
 from suds.builder import Builder
 from suds.wsdl import Definitions
@@ -38,7 +38,7 @@ from suds.sax.document import Document
 from suds.sax.parser import Parser
 from suds.options import Options
 from suds.properties import Unskin
-from urlparse import urlparse
+from urllib.parse import urlparse
 from copy import deepcopy
 from suds.plugin import PluginContainer
 from logging import getLogger
