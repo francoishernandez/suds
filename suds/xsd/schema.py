@@ -407,7 +407,7 @@ class Schema:
         # processing it again.
         # don't try and refactor this to use setdefault, it will defeat the purpose which is
         # to never run Schema.__init__ if it had already run
-        if PROCESSED_SCHEMAS_BY_URL.has_key(baseurl):
+        if baseurl in PROCESSED_SCHEMAS_BY_URL.keys():
             return PROCESSED_SCHEMAS_BY_URL[baseurl]
         PROCESSED_SCHEMAS_BY_URL[baseurl] = Schema(root, baseurl, options)
         return PROCESSED_SCHEMAS_BY_URL[baseurl]

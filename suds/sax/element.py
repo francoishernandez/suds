@@ -634,7 +634,7 @@ class Element:
             c.promotePrefixes()
         if self.parent is None:
             return
-        for p,u in self.nsprefixes.items():
+        for p,u in list(self.nsprefixes.items()):
             if p in self.parent.nsprefixes:
                 pu = self.parent.nsprefixes[p]
                 if pu == u:
@@ -969,7 +969,7 @@ class NodeIterator:
         self.pos = 0
         self.children = parent.children
         
-    def next(self):
+    def __next__(self):
         """
         Get the next child.
         @return: The next child.

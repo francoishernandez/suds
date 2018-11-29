@@ -144,8 +144,8 @@ class ServiceDefinition:
             if t in self.types: continue
             item = (t, t)
             self.types.append(item)
-        tc = lambda x,y: cmp(x[0].name, y[0].name)
-        self.types.sort(cmp=tc)
+        tc = lambda x: x[0].name
+        self.types.sort(key=tc)
         
     def nextprefix(self):
         """

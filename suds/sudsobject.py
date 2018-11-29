@@ -95,10 +95,10 @@ class Factory:
         if not isinstance(bases, tuple):
             bases = (bases,)
         name = name.encode('utf-8')
-        key = '.'.join((name, str(bases)))
+        key = '.'.join((name.decode(), str(bases)))
         subclass = cls.cache.get(key)
         if subclass is None:
-            subclass = type(name, bases, dict)
+            subclass = type(name.decode(), bases, dict)
             cls.cache[key] = subclass
         return subclass
     

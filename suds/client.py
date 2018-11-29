@@ -664,7 +664,7 @@ class SoapClient:
         @rtype: dict
         """
         action = self.method.soap.action
-        if isinstance(action, unicode):
+        if isinstance(action, str):
             action = action.encode('utf-8')
         stock = { 'Content-Type' : 'text/xml; charset=utf-8', 'SOAPAction': action }
         result = dict(stock, **self.options.headers)
@@ -750,8 +750,8 @@ class SimClient(SoapClient):
     @classmethod
     def simulation(cls, kwargs):
         """ get whether loopback has been specified in the I{kwargs}. """
-        return kwargs.has_key(SimClient.injkey)
-        
+        return SimClient.injkey in kwargs.keys()
+
     def invoke(self, args, kwargs):
         """
         Send the required soap message to invoke the specified method

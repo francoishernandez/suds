@@ -525,7 +525,7 @@ class Iter:
             self.items = sx.rawchildren
             self.index = 0
             
-        def next(self):
+        def __next__(self):
             """
             Get the I{next} item in the frame's collection.
             @return: The next item or None
@@ -576,7 +576,7 @@ class Iter:
         else:
             raise StopIteration()
     
-    def next(self):
+    def __next__(self):
         """
         Get the next item.
         @return: A tuple: the next (child, ancestry).
@@ -585,15 +585,15 @@ class Iter:
         """
         frame = self.top()
         while True:
-            result = frame.next()
+            result = next(frame)
             if result is None:
                 self.pop()
-                return self.next()
+                return next(self)
             if isinstance(result, Content):
                 ancestry = [f.sx for f in self.stack]
                 return (result, ancestry)
             self.push(result)
-            return self.next()
+            return next(self)
     
     def __iter__(self):
         return self

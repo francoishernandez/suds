@@ -65,7 +65,7 @@ class HttpTransport(Transport):
 
     def send(self, request):
         result = None
-        url = request.url
+        url = request.url.decode()
         msg = request.message
         headers = request.headers
         try:
@@ -76,7 +76,7 @@ class HttpTransport(Transport):
             log.debug('sending:\n%s', request)
             fp = self.u2open(u2request)
             self.getcookies(fp, u2request)
-            result = Reply(200, fp.headers.dict, fp.read())
+            result = Reply(200, fp.headers.__dict__, fp.read())
             log.debug('received:\n%s', result)
         except u2.HTTPError as e:
             if e.code in (202,204):

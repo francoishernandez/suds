@@ -77,7 +77,7 @@ class DepList:
             while len(self.stack):
                 try:
                     top = self.top()
-                    ref = top[1].next()
+                    ref = next(top[1])
                     refd = self.index.get(ref)
                     if refd is None:
                         log.debug('"%s" not found, skipped', Repr(ref))
