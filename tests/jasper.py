@@ -19,7 +19,7 @@ sys.path.append('../')
 
 import logging
 import traceback as tb
-import urllib2
+import urllib.request
 import suds.metrics as metrics
 import traceback as tb
 from tests import *

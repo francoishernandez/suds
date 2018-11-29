@@ -18,7 +18,7 @@
 Contains classes for basic HTTP transport implementations.
 """
 
-import urllib as u2
+import urllib.request as u2
 import base64
 import socket
 from suds.transport import *
