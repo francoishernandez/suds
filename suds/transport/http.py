@@ -24,7 +24,7 @@ import socket
 from suds.transport import *
 from suds.properties import Unskin
 import urllib.parse as urlparse
-from cookielib import CookieJar
+from http.cookiejar import CookieJar
 from logging import getLogger
 
 log = getLogger(__name__)
