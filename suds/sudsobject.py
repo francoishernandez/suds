@@ -181,7 +181,7 @@ class Iter:
         self.keylist = self.__keylist(sobject)
         self.index = 0
 
-    def next(self):
+    def __next__(self):
         keylist = self.keylist
         nkeys = len(self.keylist)
         while self.index < nkeys:

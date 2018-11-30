@@ -135,7 +135,7 @@ def tostr(object, encoding=None):
         s.append('}')
         return ''.join(s)
     try:
-        return unicode(object)
+        return str(object)
     except:
         return str(object)
     

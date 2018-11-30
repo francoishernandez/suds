@@ -188,7 +188,7 @@ class Client(object):
         return clone
  
     def __str__(self):
-        return unicode(self)
+        return str(self)
         
     def __unicode__(self):
         s = ['\n']
@@ -197,7 +197,7 @@ class Client(object):
         s.append('  version: %s' % suds.__version__)
         s.append(' %s  build: %s' % (build[0], build[1]))
         for sd in self.sd:
-            s.append('\n\n%s' % unicode(sd))
+            s.append('\n\n%s' % str(sd))
         return ''.join(s)
 
 

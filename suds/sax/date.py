@@ -104,7 +104,7 @@ class Date:
             raise ValueError('Invalid format "%s"' % s)
         
     def __str__(self):
-        return unicode(self)
+        return str(self)
     
     def __unicode__(self):
         return self.date.isoformat()
@@ -253,7 +253,7 @@ class Time:
         raise Exception()
 
     def __str__(self):
-        return unicode(self)
+        return str(self)
     
     def __unicode__(self):
         time = self.time.isoformat()
@@ -314,7 +314,7 @@ class DateTime(Date,Time):
             log.warn('"%s" caused overflow, not-adjusted', self.datetime)
 
     def __str__(self):
-        return unicode(self)
+        return str(self)
     
     def __unicode__(self):
         s = []
