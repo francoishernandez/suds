@@ -134,7 +134,8 @@ class HttpTransport(Transport):
         @return: A list of handlers to be installed in the opener.
         @rtype: [Handler,...]
         """
-        handlers = []
+        import ssl
+        handlers = [u2.HTTPSHandler(context=ssl._create_unverified_context())]
         handlers.append(u2.ProxyHandler(self.proxy))
         return handlers
             
